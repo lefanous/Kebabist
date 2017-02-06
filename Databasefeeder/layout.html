@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Database Feeder | Google Map Api</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nOIQzMQMW5rQSvhaB6ZNL9nxLW-SPyI&libraries=places&callback=initMap" async defer></script>
+  </head>
+  <body>
+    <h2>Database Feeder: Google Map Api</h2>
+    <input type="text" id="query" value="Kebab">
+    <input type="text" id="queryLocation" placeholder="Location">
+    <button id="search">Search</button>
+
+    <div>
+      <h3 id="totalResults"></h3>
+      <button id="copy" onclick="CopyToClipboard()">Results to clipboard</button>
+      <form action="" style="padding-top: 5px">
+        <input type="submit" value="Reset" />
+      </form>
+    </div>
+    <div id="result" style="padding-top: 15px"></div>
+    <div id="map"></div>
+  </body>
+</html>
