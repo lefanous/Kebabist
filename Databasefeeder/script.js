@@ -4,8 +4,6 @@ $(document).ready(function() {
   $("#search").click(function() {
   requestText = $("#query").val() + " " + $("#queryLocation").val()
   var request = {
-  	//location: new google.maps.LatLng(56.157727, 10.134759),
-  	//radius: 1000,
   	query: requestText
   };
 
@@ -96,3 +94,7 @@ if (document.selection) {
      document.execCommand("Copy");
      alert("Results copied") 
 }}
+
+function Reset() {
+	window.location = '';
+}

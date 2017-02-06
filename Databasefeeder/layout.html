@@ -10,21 +10,19 @@
   <body>
   	<div class="center">
 	    <h2 class="centerText">Database Feeder: Google Map Api</h2>
-	    	<div class="centerText">
-	    		<input type="text" id="query" value="Kebab">
-	    		<input type="text" id="queryLocation" placeholder="Location">
-	    		<button id="search">Search</button>
-			</div>
+	    <div class="centerText">
+	    	<input type="text" id="query" value="Kebab">
+	   		<input type="text" id="queryLocation" placeholder="Location">
+		</div>
 
-	    <div>
-	      <h3 id="totalResults"></h3>
+	    <div class="centerText">
+	      <h3 id="totalResults">Results found: 0</h3>
+	      <button id="search">Search</button>
 	      <button id="copy" onclick="CopyToClipboard()">Results to clipboard</button>
-	      <form action="" style="padding-top: 5px">
-	        <input type="submit" value="Reset" />
-	      </form>
+	      <button id="reset" onclick="Reset()">Reset</button>
 	    </div>
 
-	    <div id="result" style="padding-top: 15px"></div>
+	    <div id="result" style="padding-top: 15px; font-size: 12px"></div>
 	    <div id="map"></div>
     </div>
   </body>

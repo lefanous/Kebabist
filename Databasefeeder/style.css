@@ -4,8 +4,33 @@ body {
 }
 
 h2 {
-	letter-spacing: 5px;
-	font-family: Impact, sans-serif;
+	letter-spacing: 3px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h3 {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+button {
+	background-color: blue;
+    border: none;
+    color: white;
+    padding: 3px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.resultFont {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	size: 14px;
 }
 
 .center {
