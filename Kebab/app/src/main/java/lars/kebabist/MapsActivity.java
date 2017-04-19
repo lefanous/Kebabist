@@ -1,5 +1,6 @@
 package lars.kebabist;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -20,6 +21,7 @@ import java.util.concurrent.ExecutionException;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    public Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +31,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        i = getIntent();
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         try {
-            JSONObject json = new ParseData().execute("http://ayg.dk/ajjawi/Kebabist/Database/pullRequest.php").get();
+            JSONObject json = new JSONObject(i.getStringExtra("json"));
             JSONArray kebabSteder = json.getJSONArray("Kebabsteder");
 
             for(int i = 0; i < kebabSteder.length(); i++) {
@@ -45,10 +48,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.addMarker(new MarkerOptions().position(id1).title(id1name));
             }
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
